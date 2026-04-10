@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 225 10% 98%;
+  --foreground: 225 10% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 225 10% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 225 10% 10%;
+  --primary: 225 87% 63%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 225 10% 92%;
+  --secondary-foreground: 225 10% 20%;
+  --muted: 225 10% 92%;
+  --muted-foreground: 225 10% 45%;
+  --accent: 180 69% 47%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 225 10% 88%;
+  --input: 225 10% 88%;
+  --ring: 225 87% 63%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 225 10% 12%;
+  --foreground: 225 10% 95%;
+  --card: 225 10% 15%;
+  --card-foreground: 225 10% 95%;
+  --popover: 225 10% 15%;
+  --popover-foreground: 225 10% 95%;
+  --primary: 225 87% 63%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 225 10% 20%;
+  --secondary-foreground: 225 10% 95%;
+  --muted: 225 10% 20%;
+  --muted-foreground: 225 10% 65%;
+  --accent: 180 69% 47%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 225 10% 95%;
+  --border: 225 10% 25%;
+  --input: 225 10% 25%;
+  --ring: 225 87% 63%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+.custom-accent {
+  --primary: var(--user-accent, 225 87% 63%);
+  --ring: var(--user-accent, 225 87% 63%);
+}
+
+[contenteditable="true"]:focus {
+  @apply outline-none ring-2 ring-primary ring-offset-2 rounded-sm;
+}
